@@ -2,11 +2,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SeleniumTest {
+public class RegUsrWebdriver {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\chrome-win64\\chrome.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver-win64\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://membership.basketballengland.co.uk/NewSupporterAccount");
@@ -22,8 +22,11 @@ public class SeleniumTest {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        boolean regSuccess = driver.findElement(By.cssSelector(".alert-success")).isDisplayed();
+
+        
 
 
         driver.quit();
-}
+    }
 }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Supporter Account</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        label { display: block; margin-top: 10px; }
+        input { padding: 6px; width: 300px; }
+        .error { color: red; margin-top: 10px; }
+        .success { color: green; margin-top: 20px; font-weight: bold; }
+        #submit { margin-top: 20px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>Create New Supporter Account</h2>
+
+<form id="registrationForm">
+    <label>First Name</label>
+    <input id="member_firstname" type="text">
+
+    <label>Last Name</label>
+    <input id="member_lastname" type="text">
+
+    <label>Email Address</label>
+    <input id="member_emailaddress" type="email">
+
+    <label>Password</label>
+    <input id="member_password" type="password">
+
+    <label>Confirm Password</label>
+    <input id="member_confirm_password" type="password">
+
+    <label>
+        <input id="member_terms" type="checkbox"> I accept the terms
+    </label>
+
+    <button id="submit" type="button">Create Account</button>
+
+    <div id="errorBox" class="error" style="display:none;"></div>
+    <div id="successBox" class="success" style="display:none;">Account created successfully!</div>
+</form>
+
+<script>
+    document.getElementById("submit").addEventListener("click", function () {
+        const lastName = document.getElementById("member_lastname").value.trim();
+        const password = document.getElementById("member_password").value.trim();
+        const confirmPassword = document.getElementById("member_confirm_password").value.trim();
+        const termsAccepted = document.getElementById("member_terms").checked;
+
+        const errorBox = document.getElementById("errorBox");
+        const successBox = document.getElementById("successBox");
+
+        errorBox.style.display = "none";
+        successBox.style.display = "none";
+
+        // 1. Efternamn krävs
+        if (lastName === "") {
+            errorBox.textContent = "Last Name is required";
+            errorBox.style.display = "block";
+            return;
+        }
+
+        // 2. Lösenorden måste matcha
+        if (password !== confirmPassword) {
+            errorBox.textContent = "Passwords do not match";
+            errorBox.style.display = "block";
+            return;
+        }
+
+        // 3. Villkoren måste vara godkända
+        if (!termsAccepted) {
+            errorBox.textContent = "You must accept the terms";
+            errorBox.style.display = "block";
+            return;
+        }
+
+        // Allt OK
+        successBox.style.display = "block";
+    });
+</script>
+</body>
+</html>
