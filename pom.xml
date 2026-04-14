@@ -14,13 +14,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 <dependencies>
-<!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.43.0</version>
-    <scope>compile</scope>
-</dependency>
+    <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.43.0</version>
+        <scope>compile</scope>
+    </dependency>
     <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -33,14 +33,12 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.13.2</version>
-        <scope>test</scope>
     </dependency>
     <!-- Source: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
         <version>6.1.0-M1</version>
-        <scope>test</scope>
     </dependency>
     <!-- Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-edge-driver -->
     <dependency>
@@ -50,5 +48,18 @@
         <scope>compile</scope>
     </dependency>
     <!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.34.3</version>
+        <scope>compile</scope>
+    </dependency>
+    <!-- Source: https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit-platform-engine</artifactId>
+        <version>7.34.3</version>
+        <scope>test</scope>
+    </dependency>
 </dependencies>
 </project>

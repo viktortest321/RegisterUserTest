@@ -28,7 +28,7 @@ public class RegistrationSteps {
 
     @Given("I open the registration page")
     public void i_open_the_registration_page() {
-        driver.get("file://" + System.getProperty("user.dir") + "/src/test/resources/NewSupporterAccount.html");
+        driver.get("C:\\webdrivers\\mockpage.html");
     }
 
     @When("I enter a valid first name")
